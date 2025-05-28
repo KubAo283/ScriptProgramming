@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# This script extracts metada from a specified PDF file and processes it.
+# This script extracts metadata from a specified PDF file and processes it.
 
 read -p "Enter the path to the file: " file_path
 file_path="${file_path/#\~/$HOME}"
