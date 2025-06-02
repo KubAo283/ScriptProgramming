@@ -23,5 +23,6 @@ if [ $? -eq 0 ]; then
     echo "Encryption successful, the output will be stored in $2 file."
 else
     echo "Encryption failed!" >&2
+    exit -1
 fi
 
