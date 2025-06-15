@@ -26,6 +26,6 @@ openssl dgst -sha256 -sign "$PRIVATE_KEY" -out "$SIGNATURE_OUTPUT" "$FILE_TO_SIG
 if [ $? -eq 0 ]; then
     echo "File signed successfully. Signature saved to $SIGNATURE_OUTPUT"
 else
-    echo "Signing failed." >&2
+    echo "Signing failed!" >&2
     exit -1
 fi

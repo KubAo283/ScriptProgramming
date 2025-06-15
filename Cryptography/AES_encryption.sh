@@ -7,7 +7,7 @@
 
 #Checking if the correct number of arguments is passed
 if [ "$#" -ne 2 ]; then
-    echo "Incorrect number of arguments passsed!"
+    echo "Incorrect number of arguments passsed!" >&2
     exit -1
 fi
 
@@ -22,6 +22,7 @@ openssl enc -aes-256-cbc -salt -pbkdf2 -in "$1" -out "$2" -pass pass:"$PASSWORD"
 if [ $? -eq 0 ]; then
     echo "Encryption successful, the output will be stored in $2 file."
 else
-    echo "Encryption failed."
+    echo "Encryption failed!" >&2
+    exit -1
 fi
 
